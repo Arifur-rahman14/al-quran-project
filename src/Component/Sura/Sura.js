@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 // import { Card, Container, Row, Col  } from 'react-bootstrap';
 import './Sura.css';
+import Zoom from 'react-reveal/Zoom';
 
 const Sura = () => {
     const [title, setTitle] = useState([]);
@@ -46,6 +47,7 @@ const Sura = () => {
             
             {
                 title.map(titles => 
+                    <Zoom bottom>
                     <div className='grid'>
                         <div className='cards'>
                             <h2>{titles.titleAr}</h2>
@@ -54,7 +56,8 @@ const Sura = () => {
                             <h3>Total Varse: {titles.count}</h3>
                             <button className='read-btn' onClick={doThis}>Read More...</button>
                         </div>
-                    </div>)
+                    </div>
+                    </Zoom>)
             }
         </div>
     );

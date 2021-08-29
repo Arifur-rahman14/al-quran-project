@@ -21,7 +21,7 @@ const Banner = () => {
             </div>
             <Pulse>
             <div className="logosiding">
-                <img src="../../images/logotwo.png" alt='calligrafy' height="180px" width="400px"></img>
+                <img src="/src/images/logotwo.png" alt='calligrafy' height="180px" width="400px"></img>
     	    </div>
             </Pulse>
             </div>
