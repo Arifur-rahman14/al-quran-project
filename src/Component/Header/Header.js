@@ -1,22 +1,83 @@
-import React from 'react';
-import { Navbar, Nav, FormControl, Form, Button } from 'react-bootstrap';
+import React, {useState} from "react";
+import '../Header/Header.css';
+import {
+    FaFacebookSquare,
+    FaInstagramSquare,
+    FaYoutubeSquare,
+} from "react-icons/fa";
+import {GiHamburgerMenu} from "react-icons/gi";
+import {NavLink} from "react-router-dom";
 
 const Header = () => {
+
+    const [showMediaIcons, setShowMediaIcons] = useState(false);
     return (
-        <div>
-            <Navbar bg="dark" variant="dark">
-                <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-                <Nav className="mr-auto">
-                    <Nav.Link href="#home">Home</Nav.Link>
-                    <Nav.Link href="#features">Features</Nav.Link>
-                    <Nav.Link href="#pricing">Pricing</Nav.Link>
-                </Nav>
-                <Form inline>
-                    <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                    <Button variant="outline-info">Search</Button>
-                </Form>
-            </Navbar>
-        </div>
+            <>
+                <nav className="main-nav">
+                    {/* 1st logo part  */}
+                    <div className="logo">
+                        <h2>
+                            <span>T</span>hapa
+                            <span>T</span>echnical
+                        </h2>
+                    </div>
+
+                    {/* 2nd menu part  */}
+                    <div
+                        className={
+                            showMediaIcons ? "menu-link mobile-menu-link" : "menu-link"
+                        }>
+                        <ul>
+                            <li>
+                                <NavLink to="/">Home</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/about">about</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/service">services</NavLink>
+                            </li>
+                            <li>
+                                <NavLink to="/contact">contact</NavLink>
+                            </li>
+                        </ul>
+                    </div>
+
+                    {/* 3rd social media links */}
+                    <div className="social-media">
+                        <ul className="social-media-desktop">
+                            <li>
+                                <a
+                                    href="https://www.youtube.com/channel/UCwfaAHy4zQUb2APNOGXUCCA"
+                                    target="_thapa">
+                                    <FaFacebookSquare className="facebook" />
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://www.instagram.com/thapatechnical/"
+                                    target="_thapa">
+                                    <FaInstagramSquare className="instagram" />
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://www.youtube.com/channel/UCwfaAHy4zQUb2APNOGXUCCA"
+                                    target="_thapa">
+                                    <FaYoutubeSquare className="youtube" />
+                                </a>
+                            </li>
+                        </ul>
+
+                        {/* hamburget menu start  */}
+                        <div className="hamburger-menu">
+                            <a href="#" onClick={() => setShowMediaIcons(!showMediaIcons)}>
+                                <GiHamburgerMenu />
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+        </>
     );
 };
 

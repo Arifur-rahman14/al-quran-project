@@ -1,7 +1,7 @@
 import React from 'react';
 import Bounce from 'react-reveal/Bounce';
 import Pulse from 'react-reveal/Pulse';
-import Reveal from 'react-reveal/Reveal';
+// import Reveal from 'react-reveal/Reveal';
 import '../Banner/Banner.css';
 
 const Banner = () => {
@@ -21,7 +21,7 @@ const Banner = () => {
             </div>
             <Pulse>
             <div className="logosiding">
-                <img src="../../images/logotwo.png" height="180px" width="400px"></img>
+                <img src="../../images/logotwo.png" alt='calligrafy' height="180px" width="400px"></img>
     	    </div>
             </Pulse>
             </div>
